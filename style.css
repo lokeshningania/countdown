@@ -1,62 +1,116 @@
+/* style.css */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: 'Open Sans', sans-serif;
     background-color: #333;
     color: white;
 }
 
 .content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
     text-align: center;
 }
 
-header h1 {
+header h1, header h2, footer p {
     margin: 0;
+    padding: 5px 0;
+}
+
+header h1 {
     font-weight: 300;
-    font-size: 1.5em;
+    font-size: 2em;
     letter-spacing: 2px;
 }
 
 header h2 {
-    margin: 20px 0;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 3em;
     letter-spacing: 5px;
 }
 
-#countdown {
+#countdown, #extended-countdown {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    border-bottom: 2px solid white; /* White border below each row */
+    padding-bottom: 20px; /* Space below the content inside the border */
+    margin-bottom: 20px; /* Space below the border itself */
+}
+
+#extended-countdown {
+    border-bottom: none; /* Removes the border from the bottom of the last row */
 }
 
 .time-box {
-    margin: 0 10px;
-    padding: 20px;
+    padding: 10px;
     background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    flex: 1;
+    border-radius: 10px; /* Rounded borders */
+    flex-basis: calc(20% - 10px); /* Reduced size of the boxes */
+    box-sizing: border-box;
+    border: 2px solid white; /* White border around each time box */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .number {
-    display: block;
-    font-size: 3em;
+    font-size: 2em; /* Adjusted for smaller box size */
     font-weight: 700;
 }
 
 .label {
-    display: block;
-    font-size: 1em;
+    font-size: 0.8em; /* Adjusted for smaller box size */
     font-weight: 400;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 footer p {
-    margin: 30px 0 0;
+    margin-top: 20px;
     font-weight: 300;
     font-size: 1em;
     letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .time-box {
+        flex-basis: calc(50% - 10px); /* Adjust to 50% for smaller screens */
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header h2 {
+        font-size: 2em;
+    }
+
+    .number {
+        font-size: 1.5em;
+    }
+
+    .label {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .time-box {
+        flex-basis: 100%; /* Full width on very small screens */
+        margin-bottom: 10px;
+    }
+    
+    header h1, header h2 {
+        font-size: 1.2em;
+    }
+
+    footer p {
+        font-size: 0.9em;
+    }
 }
