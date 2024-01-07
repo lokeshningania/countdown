@@ -2,13 +2,13 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
     font-family: 'Open Sans', sans-serif;
     background-color: #333;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh; /* Use min-height instead of height to cover at least the full viewport height */
 }
 
 .content {
@@ -17,6 +17,7 @@ body, html {
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
+    margin-top: 20px; /* Added some space on the top */
 }
 
 header h1, header h2, footer p {
@@ -102,6 +103,10 @@ footer p {
 }
 
 @media (max-width: 480px) {
+    .content {
+        margin-top: 60px; /* Increased top margin for mobile devices */
+    }
+    
     .time-box {
         width: 100%; /* Full width for mobile screens */
         padding: 10px;
